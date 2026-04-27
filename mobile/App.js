@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useCallback } from 'react'
+import { View } from 'react-native'
+import { useFonts, Manrope_400Regular, Manrope_500Medium, Manrope_600SemiBold, Manrope_700Bold, Manrope_800ExtraBold } from '@expo-google-fonts/manrope'
+import * as SplashScreen from 'expo-splash-screen'
+import AppNavigator from './src/navigation/AppNavigator'
+
+SplashScreen.preventAutoHideAsync()
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontsLoaded] = useFonts({
+    Manrope_400Regular,
+    Manrope_500Medium,
+    Manrope_600SemiBold,
+    Manrope_700Bold,
+    Manrope_800ExtraBold,
+  })
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync()
+    }
+  }, [fontsLoaded])
+
+  if (!fontsLoaded) return null
+
+  return (
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <AppNavigator />
+    </View>
+  )
+}
