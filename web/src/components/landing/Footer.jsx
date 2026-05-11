@@ -51,9 +51,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-white">
-      <div className="mx-auto flex max-w-[1200px] items-start justify-between px-16 py-14">
+      <div className="mx-auto flex max-w-300 items-start justify-between px-16 py-14">
         {/* Left — Brand */}
-        <div className="max-w-[260px]">
+        <div className="max-w-65">
           <div className="flex items-center gap-2">
             <Image
               src="/images/logo-dark.svg"
@@ -133,7 +133,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mx-auto max-w-[1200px] px-16 pb-8">
+      <div className="mx-auto max-w-300 px-16 pb-8">
         <p className="text-right text-caption text-text-muted">
           © 2024 Omi Marketplace. The Digital Curator
         </p>
