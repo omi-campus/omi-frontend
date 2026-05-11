@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import Cookies from 'js-cookie'
 
 const useAuthStore = create(
   persist(
@@ -9,13 +10,15 @@ const useAuthStore = create(
       refreshToken: null,
       isAuthenticated: false,
 
-      setAuth: (user, accessToken, refreshToken) =>
+      setAuth: (user, accessToken, refreshToken) => {
+        Cookies.set('omi-session', 'true', { expires: 30 })
         set({
           user,
           accessToken,
           refreshToken,
           isAuthenticated: true,
-        }),
+        })
+      },
 
       setAccessToken: (accessToken) => set({ accessToken }),
 
@@ -24,13 +27,15 @@ const useAuthStore = create(
           user: { ...state.user, ...updates },
         })),
 
-      logout: () =>
+      logout: () => {
+        Cookies.remove('omi-session')
         set({
           user: null,
           accessToken: null,
           refreshToken: null,
           isAuthenticated: false,
-        }),
+        })
+      },
     }),
     {
       name: 'omi-auth',

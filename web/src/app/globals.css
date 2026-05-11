@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   /* Brand colors */
   --color-forest-green: #2D4239;
   --color-chalk-white: #F7F7F5;

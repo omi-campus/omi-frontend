@@ -1,14 +1,25 @@
-export default function Home() {
+import Navbar from '@/components/landing/Navbar'
+import Hero from '@/components/landing/Hero'
+import HowItWorks from '@/components/landing/HowItWorks'
+import CategoryPills from '@/components/landing/CategoryPills'
+import TrendingListings from '@/components/landing/TrendingListings'
+import WhyOmi from '@/components/landing/WhyOmi'
+import VendorCTA from '@/components/landing/VendorCTA'
+import AppDownload from '@/components/landing/AppDownload'
+import Footer from '@/components/landing/Footer'
+
+export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-chalk-white flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-h1 font-bold text-forest-green font-manrope">
-          Omi
-        </h1>
-        <p className="text-body text-text-secondary mt-2">
-          Your campus. Your community.
-        </p>
-      </div>
+    <main className="min-h-screen bg-chalk-white font-manrope">
+      <Navbar />
+      <Hero />
+      <HowItWorks />
+      <CategoryPills />
+      <TrendingListings />
+      <WhyOmi />
+      <VendorCTA />
+      <AppDownload />
+      <Footer />
     </main>
   )
 }
