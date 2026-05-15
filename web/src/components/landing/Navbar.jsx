@@ -26,15 +26,15 @@ export default function Navbar() {
 
       {/* Auth */}
       <div className="flex items-center gap-3">
-        <Link href="/login" className="text-body text-text-primary font-semibold px-4 py-2">
-          Log In
-        </Link>
-        <Link
-          href="/signup"
-          className="text-body text-chalk-white font-semibold bg-forest-green px-5 py-2 rounded-button hover:opacity-90 transition-opacity"
-        >
-          Sign Up
-        </Link>
+      <Link href="/auth/login" className="text-body text-text-primary font-semibold px-4 py-2">
+  Log In
+</Link>
+<Link
+  href="/auth/signup"
+  className="text-body text-chalk-white font-semibold bg-forest-green px-5 py-2 rounded-button hover:opacity-90 transition-opacity"
+>
+  Sign Up
+</Link>
       </div>
 
     </nav>

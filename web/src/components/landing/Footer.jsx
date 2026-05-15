@@ -135,7 +135,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="mx-auto max-w-300 px-16 pb-8">
         <p className="text-right text-caption text-text-muted">
-          © 2024 Omi Marketplace. The Digital Curator
+          © 2026 Omi Marketplace. The Digital Curator
         </p>
       </div>
     </footer>
