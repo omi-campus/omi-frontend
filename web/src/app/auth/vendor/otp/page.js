@@ -1,5 +1,5 @@
-import Component from '@/components/auth/vendor/OTP'
+import OTP from '@/components/auth/shared/OTP'
 
 export default function VendorOTPPage() {
-  return <Component />
+  return <OTP redirectTo="/auth/vendor/subscription" />
 }

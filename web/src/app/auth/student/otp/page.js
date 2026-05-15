@@ -1,5 +1,5 @@
-import Component from '@/components/auth/student/OTP'
+import OTP from '@/components/auth/shared/OTP'
 
 export default function StudentOTPPage() {
-  return <Component />
+  return <OTP redirectTo="/auth/student/id-upload" />
 }
